@@ -40,7 +40,7 @@ VMware Workstation Pro不是一个免费的软件，如果觉得好用，可以�
 
 安装完成进入系统后，可以选择应用中的“Softwares & Updates（软件和更新）”，可以以图形化的方式选择镜像源。这里我们选择国内（China）的**镜像源**，这样在下载package时的速度会有显著的提升。
 
-![image-20210115022553608](C:\Users\Henry\AppData\Roaming\Typora\typora-user-images\image-20210115022553608.png)
+![在Ubuntu中以图形化的方式选择镜像源](image/Snipaste_2021-01-15_02-25-02.jpg)
 
 ### 安装必要软件
 
@@ -80,7 +80,7 @@ $ sudo apt-get install cowsay
 $ cowsay hello
 ```
 
-![image-20210115024526847](C:\Users\Henry\AppData\Roaming\Typora\typora-user-images\image-20210115024526847.png)
+![包管理示范](image/Snipaste_2021-01-15_02-45-25.jpg)
 
 接下来还可以安装构建所需要的工具：
 
@@ -206,3 +206,13 @@ $ cd ..
 | `mv 源文件 目标文件` | move     | 移动文件或者目录／文件或者目录重命名 |
 
 参考链接：[文件和目录常用命令 - davidabdy - 博客园 (cnblogs.com)](https://www.cnblogs.com/zkpythonstudy/p/9960512.html)
+
+
+
+## 相关内容
+
+
+- [《Advanced Bash-Scripting Guide (高级Bash脚本编程指南)》中文版](https://doc.yonyoucloud.com/doc/Advanced-Bash-Scripting-Guide-in-Chinese/index.html)：链接中有原文地址，也有项目的Github地址
+
+
+
