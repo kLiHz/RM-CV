@@ -82,20 +82,13 @@ int main() {
 
 ## 使用Lambda表达式
 
-先来看C++中Lambda表达式的几种形式：
+先来看C++中Lambda表达式的几种形式，其中*captures*是表示需要捕获的变量，也就是匿名函数中需要用到的变量，*params*是需要接收的参数，*ret*是返回值类型，*body*则是函数体
 
-- [ *captures* ] ( *params* ) -> *ret* { *body* }
-
-    说明：这是Lambda表达式的原型，其中*captures*是表示需要捕获的变量，也就是匿名函数中需要用到的变量，*params*是需要接收的参数，*ret*是返回值类型，*body*则是函数体。
-
-- [ *captures* ] ( *params* ) { *body* }
-
-    说明：由于返回值可以自动推导，所以可以不用指明返回值。
-
-- [ *captures* ] { *body* }
-
-    说明：如果函数不要参数，那么参数也可以省略掉
-
+|原型| 说明|
+|:---|:---|
+|  [ *captures* ] ( *params* ) -> *ret* { *body* } | Lambda表达式的原型  |
+| [ *captures* ] ( *params* ) { *body* } | 返回值可以自动推导，所以可以不用指明返回值 |
+|[ *captures* ] { *body* }|如果函数不要参数，那么参数也可以省略掉|
 
 
 先从比较简单的几个例子说起：
@@ -173,7 +166,7 @@ int main() {
 - `[=, &x]`：默认以值捕获所有变量，但是`x`是例外，通过引用捕获；
 - `[&, x]`：默认以引用捕获所有变量，但是`x`是例外，通过值捕获；
 
-引用捕获不会延长变量生存期，因此有可能出现“悬挂引用（Dangling references）”，比如这样：
+引用捕获不会延长变量生存期，因此有可能出现**悬挂引用**（Dangling references），比如这样：
 
 ```cpp
 auto make_function(int x) {
