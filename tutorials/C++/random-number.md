@@ -1,4 +1,4 @@
-# C++生成随机数
+# 用C++的random库生成更好的随机数
 
 ## 传统C语言的`rand()`和`srand()`
 
@@ -38,8 +38,6 @@ int main()
 
 为了方便说明，我们假设随机数发生的范围是1到32，且1到32每个数字出现的概率是相等的 ，那么`rand() % 5`会得到6个0、7个1、7个2、6个3、6个4，可见，0到4出现的概率并不是相等的。
 
-**可悲的是**，写这篇文章时，“C++随机数”关键字的搜索结果中，基本没有提到这些问题。笔者自己也后知后觉，瞬间感觉自己**被骗了**很多年。
-
 那该怎么写呢？[std::rand - cppreference.com](https://en.cppreference.com/w/cpp/numeric/random/rand) 这里给出了一个示例，下面直接复制粘贴：
 
 ```cpp
@@ -68,9 +66,24 @@ int main()
 即，记总能产生的随机数数目的最大值为$N$，在这里$N$的值应该为`RAND_MAX + 1`，所以，`rand()/N`可以得到0到1之间的浮点数，再乘以一个数$k$就可以得到$0$到$k$之间的数了。
 
 生成$[a,b]$之间的随机数：
+
 $$
-a+\cfrac{\tt rand()}{N}\times (b-a+1) = a+\cfrac{\tt rand()}{\cfrac{N}{(b-a+1)}}
+a + \cfrac{ \tt rand()}{N} \times (b-a+1) = a + \cfrac{ \tt rand()}{ \cfrac{N}{(b-a+1)}}
 $$
+
+**可悲的是**，写这篇文章时，“C++随机数”关键字的搜索结果中，基本没有提到这些问题，而且很多都是只提到了使用`rand()`来产生随机数（因为有C++，所以更应该使用C++的random库）。笔者自己也后知后觉，瞬间感觉自己**被骗了**很多年。
+
+> 其实多往后边翻几页就能看到了，这里放几个搜索到的**个人博客**的入口：
+>
+> - [C++11 的随机数 | 拾荒志 (murphypei.github.io)](https://murphypei.github.io/blog/2019/10/cpp-random)
+> - [C++随机数 | Sail (sail.name)](https://www.sail.name/2018/08/07/random-number-of-C++/)
+> - [C++ 生成随机数 (ccyg.studio)](http://blog.ccyg.studio/article/91e20a65-45d1-49e8-b28a-a33b6ac0f96b/)
+>
+> 还有微软的文档；如果你到微软的文档看`rand()`，就会发现其实是[不推荐使用](https://docs.microsoft.com/zh-cn/cpp/c-runtime-library/reference/rand?view=msvc-160)的：
+>
+> - [\<random\> | Microsoft Docs](https://docs.microsoft.com/en-us/cpp/standard-library/random?view=msvc-160)，也有机翻的[中文版](https://docs.microsoft.com/zh-cn/cpp/standard-library/random?view=msvc-160)
+
+
 
 ## C++的random library 
 
@@ -120,6 +133,8 @@ int main()
     std::cout << '\n';
 }
 ```
+
+`std::random_device`会向操作系统请求随机数。
 
 还有一个正态分布的例子，从上面的介绍随机数的[页面][Pseudo-random number generation]复制而来。
 
