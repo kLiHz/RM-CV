@@ -38,7 +38,7 @@ UML中有很多种图表，简单的来说可以分成两类，一些用来表�
 
 下面是我从上面网站搬过来的示例图：
 
-![UML类图示例](C:\Users\Henry\Documents\GitHub\RM-CV\tutorials\others\uml-diagram.assets\uml-class-diagram-example.svg)
+![UML类图示例](uml-diagram.assets/uml-class-diagram-example.svg)
 
 - 车的类图结构为`<<abstract>>`，表示车是一个抽象类；
 - 它有两个继承类：小汽车和自行车；它们之间的关系为**实现**关系，使用**带空心箭头的虚线**表示；
