@@ -96,14 +96,14 @@ yUML不仅可以画类图，其他的活动图、行为图等等也是可以的 
 | 类型                              | 代码                                                         |                             示例                             |
 | --------------------------------- | ------------------------------------------------------------ | :----------------------------------------------------------: |
 | 类                                | `[A]`                                                        |                                                              |
-| 带详细信息的类                    | `[A|- x: int;- y: int|+ A();+ func()]`（不同区域用竖线隔开） | ![UML Full Class](uml-diagram.assets/uml-full-class-example.svg) |
+| 带详细信息的类                    | <code>[A&#124;- x: int;- y: int&#124;+ A();+ func()]</code> <br>（不同区域用竖线隔开） | ![UML Full Class](uml-diagram.assets/uml-full-class-example.svg) |
 | 单向箭头                          | `[A]->[B]`                                                   |                                                              |
 | 双向箭头                          | `[A]<->[B]`                                                  |                                                              |
 | 连线                              | `[A]-[B]`                                                    |                                                              |
 | 聚合（Aggregation）               | `[A]+-[B]`或者`[A]<>-[B]`                                    | ![UML聚合关系](uml-diagram.assets/uml-aggregation-example.svg) |
 | 组合（Composition）               | `[A]++-[B]`                                                  | ![UML组合关系](uml-diagram.assets/uml-composition-example.svg) |
 | 继承（Inheritance）               | `[Fruit]^[Watermelon]`                                       | ![UML继承关系](uml-diagram.assets/uml-generalization-example.svg) |
-| 接口继承（Interface Inheritance） | `[<<abstract>> Vehicle]^-.-[Car]`，`[<<abstract>> Vehicle]^-.-[Bicycle]` | ![UML实现关系/Interface Inheritance](uml-diagram.assets/uml-interface-inheritance-example.svg) |
+| 接口继承（Interface Inheritance） | `[<<abstract>> Vehicle]^-.-[Car]`, <br>`[<<abstract>> Vehicle]^-.-[Bicycle]` | ![UML实现关系/Interface Inheritance](uml-diagram.assets/uml-interface-inheritance-example.svg) |
 | 依赖（Dependencies）              | `[Customer]-.->[PaymentStrategy]`                            | ![UML依赖关系](uml-diagram.assets/uml-dependency-example.svg) |
 
 要使用集成在VS Code中的插件，还请参阅作者整理的Wiki。
