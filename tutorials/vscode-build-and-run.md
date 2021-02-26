@@ -6,6 +6,8 @@ VSCode，全称Visual Studio Code（在Visual Studio后边加了一个Code），
 
 ## 在 VS Code 中构建和运行
 
+> **TL;DR**: VS Code 商店里有 CMake Tools 插件；使用 CMake 生成构建档，再搭配插件，build & run 可以一气呵成。
+
 VS Code 是一个可以搭配很多插件、因此很好用的代码**编辑器**；既然是编辑器，那么它本身其实不是为了调试程序而设计的。
 
 不过，编写一些小的程序，甚至小型的工程，使用 IDE 会稍显庞大，一般也可以选择使用 VS Code 编写；写好之后，想顺手在 VS Code 中编译运行的时候，可能会遇到一些问题。
@@ -28,7 +30,7 @@ VS Code 是一个可以搭配很多插件、因此很好用的代码**编辑器*
 g++ show_img.cpp -o show_img $(pkg-config --cflags --libs opencv4)
 ```
 
-> `$()`这个命令替换符是 PowerShell 和 bash 通用的，在 bash 中可能会更多的使用<code>``</code>来实现命令替换；实际上两者有细微区别，但这里暂时不多展开。
+> `$()`为命令替换符，作用是获取其他命令的输出。
 
 不过可惜的是，在 PowerShell 中输入上述命令，`g++`并不能完成链接操作；只有在 msys2 的窗口中能够正常使用。索性放弃手动输入命令，转向使用 CMake 进行程序的构建。
 
@@ -42,11 +44,12 @@ project(opencv_test)
 set(CMAKE_CXX_STANDARD 17)
 
 find_package(OpenCV REQUIRED)
-include_directories(${OpenCV_INCLUDE_DIRS})
 
 add_executable(show_img show_img.cpp)
 target_link_libraries(show_img ${OpenCV_LIBS})
 ```
+
+> 虽然成功找到 OpenCV 的安装之后，会写入`OpenCV_DIRS`变量，但并不需要使用`include_directories(${OpenCV_INCLUDE_DIRS})`命令。
 
 之后，随便进入某个文件夹（一般还是选择在项目文件夹下新建一个`build`目录），然后在目录下执行`cmake`并指定`CMakeLists.txt`所在的目录，若在 Windows 下想要使用 msys2 的工具链进行构建（使用 msys2 环境下安装的库），还要指定 CMake 生成的构建档的类型，如：
 

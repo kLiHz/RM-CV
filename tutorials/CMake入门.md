@@ -395,7 +395,7 @@ find_package(OpenCV REQUIRED)
 
 比如OpenCV会设置`OpenCV_INCLUDE_DIRS`、`OpenCV_LIBS`等变量，`OpenCV_INCLUDE_DIRS`是OpenCV的包含目录路径，`OpenCV_LIBS`则包含链接所需的OpenCV的库文件。
 
-
+> 注：虽然成功找到 OpenCV 的安装之后，会写入`OpenCV_DIRS`变量，但并不需要使用`include_directories(${OpenCV_INCLUDE_DIRS})`命令。
 
 所以，我们的`CMakeLists.txt`可以这样编写：
 
@@ -405,8 +405,6 @@ project(opencv_test)
 
 find_package(OpenCV REQUIRED)
 
-include_directories(${OpenCV_INCLUDE_DIRS})
-
 add_executable(show_img show_img.cpp)
 
 target_link_libraries(show_img ${OpenCV_LIBS})
@@ -415,4 +413,5 @@ target_link_libraries(show_img ${OpenCV_LIBS})
 如果正确安装了OpenCV，理论上就能找到。
 
 也可以给`<PackageName>_DIR` 变量指定值，则CMake会先在指定路径下寻找`.cmake`文件。
+
 
