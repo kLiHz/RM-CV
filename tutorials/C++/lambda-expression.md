@@ -189,7 +189,7 @@ int main() {
 >
 > - [C++ lambda表达式与函数对象 - 简书 (jianshu.com)](https://www.jianshu.com/p/d686ad9de817)
 > - [第 3 章 语言运行期的强化 现代 C++ 教程: 高速上手 C++ 11/14/17/20 - Modern C++ Tutorial: C++ 11/14/17/20 On the Fly (changkun.de)](https://changkun.de/modern-cpp/zh-cn/03-runtime/index.html)
-> - [Lambda Expressions in C++ | Microsoft Docs](https://docs.microsoft.com/en-us/cpp/cpp/lambda-expressions-in-cpp)
+> - [Lambda Expressions in C++ &#124; Microsoft Docs](https://docs.microsoft.com/en-us/cpp/cpp/lambda-expressions-in-cpp)
 > - [基础篇：Lambda 表达式和函数对象 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/143884880)
 
 
