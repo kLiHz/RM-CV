@@ -50,14 +50,14 @@ UML中有很多种图表，简单的来说可以分成两类，一些用来表�
 
 
 
-| 类之间的关系                    | 说明                                                         | 图例                                                         |
-| ------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 泛化关系（generalization）      | 也可以说是一般的**继承**关系，即为"is-a"的关系——两个对象之间的关系可以用“A是一个B”这样的描述表示。比如，西瓜是水果。 | ![UML继承关系](uml-diagram.assets/uml-generalization-example.svg) |
-| 实现关系（Interface Inheritance | 也可以说是“接口继承（Interface Inheritance）”，即从抽象类继承而来。比如，“车”是一个抽象概念，只有像“汽车”、“自行车”才能生成具体的对象。 | ![UML实现关系/Interface Inheritance](uml-diagram.assets/uml-interface-inheritance-example.svg) |
-| 聚合关系（aggregation）         | 表示整体由部分构成的语义：例如一个部门由多个员工组成。与组合关系不同的是，整体和部分不是强依赖的，即使整体不存在了，部分仍然存在：例如， 部门撤销了，人员不会消失，他们依然存在。如图表示A聚合到B上，或者说B由A组成。 | ![UML聚合关系](uml-diagram.assets/uml-aggregation-example.svg) |
-| 组合/强聚合 关系(composition)   | 与聚合关系一样，组合关系同样表示整体由部分构成的语义。但组合关系是一种强依赖的特殊聚合关系，如果整体不存在了，则部分也不存在了：例如，公司不存在了，部门也将不存在了。如图表示A组成B，或者B由A组成。 | ![UML组合关系](uml-diagram.assets/uml-composition-example.svg) |
-| 关联关系(association)           | 关联关系是用一条直线表示的；它描述不同类的对象之间的结构关系；它是一种静态关系， 通常与运行状态无关，一般由常识等因素决定的；它一般用来定义对象之间静态的、天然的结构； 所以，关联关系是一种“强关联”的关系；关联关系默认不强调方向，表示对象间相互知道；如果特别强调方向，如下图，表示A知道B，但B不知道A。 | ![UML关联关系](uml-diagram.assets/uml-association-example.svg) |
-| 依赖关系(dependency)            | 描述一个对象在运行期间会用到另一个对象的关系。与关联关系不同的是，它是一种临时性的关系，通常在运行期间产生，并且随着运行时的变化，依赖关系也可能发生变化。如下图表示A依赖于B。 | ![UML依赖关系](uml-diagram.assets/uml-dependency-example.svg) |
+| 类之间的关系 | 解释                                                         | 举例说明                                                     | 图例                                                         |
+| ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 泛化关系     | 泛化(generalization)，也可以说是一般的**继承**关系，即两个对象之间为"is-a"的关系 | 西瓜是水果                                                   | ![UML继承关系](uml-diagram.assets/uml-generalization-example.svg) |
+| 实现关系     | 也可以说是“接口继承 (Interface Inheritance)”，即从抽象类继承而来 | “车”是一个抽象概念，只有像“汽车”、“自行车”才能生成具体的对象 | ![UML实现关系/Interface Inheritance](uml-diagram.assets/uml-interface-inheritance-example.svg) |
+| 聚合关系     | 聚合 (aggregation) 表示整体由部分构成的语义；不同于组合关系的是，整体和部分不是强依赖的，即使整体不存在了，部分仍然存在 | 一个部门由多个员工组成， 部门撤销了，但人员不会消失；如图表示A聚合到B上 / B由A组成 | ![UML聚合关系](uml-diagram.assets/uml-aggregation-example.svg) |
+| 组合关系     | 组合关系 (composition) 是一种强依赖的特殊聚合关系（强聚合关系）：如果整体不存在了，则部分也不存在了 | 公司不存在了，部门也将不存在了；如图表示A组成B / B由A组成    | ![UML组合关系](uml-diagram.assets/uml-composition-example.svg) |
+| 关联关系     | 描述不同类之间**静态的**、天然的结构关系 (association)，通常与运行状态无关，一般由常识等因素决定，因此是一种“强关联”的关系 | 用一条直线表示，默认不强调方向，表示对象间相互知道；若强调方向，如图表示A知道B，但B不知道A | ![UML关联关系](uml-diagram.assets/uml-association-example.svg) |
+| 依赖关系     | 描述一个对象在运行期间依赖另一个对象的关系 (dependency)；是一种**临时性的**关系，通常在运行期间产生，并且可能随着运行发生变化 | 如图表示A依赖于B                                             | ![UML依赖关系](uml-diagram.assets/uml-dependency-example.svg) |
 
 ### 时序图
 
