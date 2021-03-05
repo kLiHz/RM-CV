@@ -15,3 +15,7 @@
 
 - [OpenCV Mat 类的介绍和使用](./cv/opencv-mat.md)
 
+## Others
+
+- [UML类图](./others/uml-diagram.md)
+
