@@ -7,7 +7,7 @@
 	<g clip-path="url(#clip0)">
 		<rect x="0" y="0" width="800" height="560" fill="#FFFFFF" />
 		<rect x="424.5" y="30.5001" width="350" height="330" stroke="#3B3838" stroke-linejoin="round" stroke-miterlimit="10" fill="none" />
-		<text font-family="Consolas,Consolas_MSFontService,sans-serif" font-weight="700" font-size="21" transform="translate(551.549 55)">
+		<text font-family="Courier New,Courier,Consolas,monospace" font-weight="700" font-size="21" transform="translate(551.549 55)">
 			funcs.cpp
 			<tspan font-size="19" x="-118.247" y="46">#include "funcs.h"</tspan>
 			<tspan font-weight="400" font-size="19" x="-118.247" y="90">int add(int n, int m)</tspan>
@@ -20,32 +20,19 @@
 			<tspan font-weight="400" font-size="19" x="-118.247" y="270">}</tspan>
 		</text>
 		<rect x="36.5001" y="30.5001" width="361" height="240" stroke="#3B3838" stroke-linejoin="round" stroke-miterlimit="10" fill="none" />
-		<text font-family="Consolas,Consolas_MSFontService,sans-serif" font-weight="700" font-size="21" transform="translate(175.524 55)">
+		<text font-family="Courier New,Courier,Consolas,monospace" font-weight="700" font-size="21" transform="translate(175.524 55)">
 			funcs.h
-			<tspan font-size="19" x="-129.913" y="46">#ifndef</tspan>
-			<tspan font-size="19" x="-47.2467" y="46">FUNCS_H</tspan>
-			<tspan font-size="19" x="-129.913" y="68">#define</tspan>
-			<tspan font-size="19" x="-47.2467" y="68">FUNCS_H</tspan>
-			<tspan font-weight="400" font-size="19" x="-129.913" y="113">int</tspan>
-			<tspan font-weight="400" font-size="19" x="-88.58" y="113">add(int</tspan>
-			<tspan font-weight="400" font-size="19" x="-5.91333" y="113">n,</tspan>
-			<tspan font-weight="400" font-size="19" x="25.0867" y="113">int</tspan>
-			<tspan font-weight="400" font-size="19" x="66.42" y="113">m);</tspan>
-			<tspan font-weight="400" font-size="19" x="-129.913" y="135">int</tspan>
-			<tspan font-weight="400" font-size="19" x="-88.58" y="135">subtract(int</tspan>
-			<tspan font-weight="400" font-size="19" x="45.7533" y="135">n,</tspan>
-			<tspan font-weight="400" font-size="19" x="87.0867" y="135">int</tspan>
-			<tspan font-weight="400" font-size="19" x="128.42" y="135">m);</tspan>
-			<tspan font-size="19" x="-129.913" y="180">#</tspan>
-			<tspan font-size="19" x="-119.58" y="180">endif</tspan>
+			<tspan font-size="19" x="-129.913" y="46">#ifndef FUNCS_H</tspan>
+			<tspan font-size="19" x="-129.913" y="68">#define FUNCS_H</tspan>
+			<tspan font-weight="400" font-size="19" x="-129.913" y="113">int add(int n, int m);</tspan>
+			<tspan font-weight="400" font-size="19" x="-129.913" y="135">int subtract(int n, int m);</tspan>
+			<tspan font-size="19" x="-129.913" y="180">#endif</tspan>
 		</text>
 		<rect x="36.5001" y="292.5" width="361" height="239" stroke="#3B3838" stroke-linejoin="round" stroke-miterlimit="10" fill="none" />
-		<text font-family="Consolas,Consolas_MSFontService,sans-serif" font-weight="700" font-size="21" transform="translate(169.69 316)">
+		<text font-family="Courier New,Courier,Consolas,monospace" font-weight="700" font-size="21" transform="translate(169.69 316)">
 			main.cpp
-			<tspan font-size="19" x="-124.08" y="46">#include</tspan>
-			<tspan font-size="19" x="-31.08" y="46">"funcs.h"</tspan>
-			<tspan font-weight="400" font-size="19" x="-124.08" y="90">int</tspan>
-			<tspan font-weight="400" font-size="19" x="-82.7467" y="90">main()</tspan>
+			<tspan font-size="19" x="-124.08" y="46">#include "funcs.h"</tspan>
+			<tspan font-weight="400" font-size="19" x="-124.08" y="90">int main()</tspan>
 			<tspan font-weight="400" font-size="19" x="-124.08" y="113">{</tspan>
 			<tspan font-weight="400" font-size="19" x="-82.7467" y="135">add(6,7);</tspan>
 			<tspan font-weight="400" font-size="19" x="-82.7467" y="158">subtract(8,9);</tspan>

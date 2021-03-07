@@ -7,13 +7,12 @@
 	<g clip-path="url(#clip0)">
 		<rect x="0" y="0" width="1000" height="500" fill="#FFFFFF" />
 		<path d="M919.933 393.178 876.428 322.526 877.563 321.827 921.068 392.479ZM874.289 325.409 873.5 316.5 881.101 321.215Z" />
-		<text font-family="Times New Roman,Times New Roman_MSFontService,sans-serif" font-weight="400" font-size="21" transform="translate(841.198 418)">
-			main.
-			<tspan font-family="Times New Roman,Times New Roman_MSFontService,KaiTi,KaiTi_MSFontService,sans-serif" font-size="21" x="48.1667" y="0">cpp 中会有</tspan>
-			<tspan font-family="Times New Roman,Times New Roman_MSFontService,KaiTi,KaiTi_MSFontService,sans-serif" font-size="21" x="7.16669" y="25">两个 func 函数</tspan>
+		<text font-family="Courier New,KaiTi,sans-serif" font-weight="400" font-size="21" transform="translate(841.198 418)">
+			main.cpp中会有
+			<tspan font-family="Courier New,KaiTi,sans-serif" font-size="21" x="7.16669" y="25">两个func函数</tspan>
 		</text>
 		<rect x="347.5" y="26.5001" width="293" height="210" stroke="#7F7F7F" stroke-linejoin="round" stroke-miterlimit="10" fill="none" />
-		<text font-family="Consolas,Consolas_MSFontService,sans-serif" font-weight="700" font-size="21" transform="translate(440.936 50)">
+		<text font-family="Courier New,Courier,Consolas,monospace" font-weight="700" font-size="21" transform="translate(440.936 50)">
 			func2.cpp
 			<tspan font-weight="400" font-size="19" x="-84.4133" y="40">#include "func.cpp"</tspan>
 			<tspan font-weight="400" font-size="19" x="-84.4133" y="85">void</tspan>
@@ -23,7 +22,7 @@
 			<tspan font-weight="400" font-size="19" x="-84.4133" y="152">}</tspan>
 		</text>
 		<rect x="347.5" y="249.5" width="293" height="211" stroke="#7F7F7F" stroke-linejoin="round" stroke-miterlimit="10" fill="none" />
-		<text font-family="Consolas,Consolas_MSFontService,sans-serif" font-weight="700" font-size="21" transform="translate(440.936 274)">
+		<text font-family="Courier New,Courier,Consolas,monospace" font-weight="700" font-size="21" transform="translate(440.936 274)">
 			func1.cpp
 			<tspan font-weight="400" font-size="19" x="-84.4133" y="40">#include "func.cpp"</tspan>
 			<tspan font-weight="400" font-size="19" x="-84.4133" y="85">void func1(int a, int b)</tspan>
@@ -32,7 +31,7 @@
 			<tspan font-weight="400" font-size="19" x="-84.4133" y="152">}</tspan>
 		</text>
 		<rect x="679.5" y="126.5" width="254" height="240" stroke="#7F7F7F" stroke-linejoin="round" stroke-miterlimit="10" fill="none" />
-		<text font-family="Consolas,Consolas_MSFontService,sans-serif" font-weight="700" font-size="21" transform="translate(759.285 151)">
+		<text font-family="Courier New,Courier,Consolas,monospace" font-weight="700" font-size="21" transform="translate(759.285 151)">
 			main.cpp
 			<tspan font-weight="400" font-size="19" x="-71.1667" y="40">#include "func1.cpp"</tspan>
 			<tspan font-weight="400" font-size="19" x="-71.1667" y="62">#include "func2.cpp"</tspan>
@@ -42,7 +41,7 @@
 			<tspan font-weight="400" font-size="19" x="-71.1667" y="174">}</tspan>
 		</text>
 		<rect x="35.5001" y="160.5" width="267" height="172" stroke="#7F7F7F" stroke-linejoin="round" stroke-miterlimit="10" fill="none" />
-		<text font-family="Consolas,Consolas_MSFontService,sans-serif" font-weight="700" font-size="21" transform="translate(121.682 185)">
+		<text font-family="Courier New,Courier,Consolas,monospace" font-weight="700" font-size="21" transform="translate(121.682 185)">
 			func.cpp
 			<tspan font-weight="400" font-size="19" x="-77.3333" y="46">void func(int a, int b)</tspan>
 			<tspan font-weight="400" font-size="19" x="-77.3333" y="68">{</tspan>
