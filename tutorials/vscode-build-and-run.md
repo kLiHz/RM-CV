@@ -71,3 +71,14 @@ cmake --build .
 
 
 
+---
+
+扩展阅读：
+
+- https://www.bilibili.com/video/BV1sW411v7VZ/
+
+- https://www.bilibili.com/video/BV1nt4y1r7Ez/
+
+- [vscode配置opencv c++开发环境 - walker_bin - 博客园 (cnblogs.com)](https://www.cnblogs.com/walker-lin/p/11111226.html)
+
+- [（三）Visual Studio Code中设置OpenCV(MinGW-w64) - 简书 (jianshu.com)](https://www.jianshu.com/p/bc6017331646)

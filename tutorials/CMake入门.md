@@ -6,6 +6,7 @@
 > 参考链接：
 >
 > - [CMake 如何入门？ - 知乎](https://www.zhihu.com/question/58949190)
+> - [BrightXiaoHan/CMakeTutorial: CMake中文实战教程 - github.com](https://github.com/BrightXiaoHan/CMakeTutorial) 
 > - [如何评价 CMake？ - 知乎](https://www.zhihu.com/question/276415476)
 > - CLion的CMake快速入门教程：[Quick CMake Tutorial](https://www.jetbrains.com/help/clion/quick-cmake-tutorial.html)
 > - Visual Studio关于CMake项目的讲解：[CMake projects in Visual Studio](https://docs.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio)
@@ -413,5 +414,22 @@ target_link_libraries(show_img ${OpenCV_LIBS})
 如果正确安装了OpenCV，理论上就能找到。
 
 也可以给`<PackageName>_DIR` 变量指定值，则CMake会先在指定路径下寻找`.cmake`文件。
+
+
+
+## install
+
+https://blog.csdn.net/ktigerhero3/article/details/68941252/
+
+
+
+## configure_file
+
+
+
+## 其他
+
+参见 CMake in VS Code
+
 
 
