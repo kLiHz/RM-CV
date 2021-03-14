@@ -144,7 +144,7 @@ int main() {
 >
 > **参考链接**：[copy small part of mat to another - OpenCV Q&A Forum](https://answers.opencv.org/question/79889/copy-small-part-of-mat-to-another/)
 
-### 3. 特殊矩阵
+### 3. 特殊矩阵（仿 Matlab 形式）
 
 `Mat`对象有`zeros()`、`ones()`、`eyes()`三个静态成员方法，可以生成全1、全0以及单位矩阵。
 
@@ -201,6 +201,10 @@ int main() {
 
 上一个章节已经介绍了`Mat`对象在内存中是如何存储的，并且有一个计算元素地址的公式，但是一般情况下我们不需要在代码中直接使用该公式。
 
+### 访问某个点
+
+接下来先介绍单通道图像的情况。
+
 在知道`Mat`中数据类型的情况下，对于一个2维数组的`(i,j)`号元素，可以用`at`方法访问；假设`M`是一个双精度浮点数数组：
 
 ```cpp
@@ -223,6 +227,8 @@ M.at<double>(i,j) += 1.0F;
 | `CV_32F`    | `M.at<float>`  |
 | `CV_64F`    | `M.at<double>` |
 
+### 逐行访问
+
 如果一次要处理一整行，最高效的方法是先取得指向行首的指针，之后使用C语言中的`[]`运算符访问相应的元素：
 
 ```cpp
@@ -236,7 +242,9 @@ for (int i = 0; i < M.rows; ++i) {
 }
 ```
 
-有些操作实际上并不取决于数组的形状或大小。比如**逐个**处理数组中的元素（比如上面这个），或者是处理不同数组中**坐标相同**的元素（比如数组加法）。在这之前，有必要确保输入/输出数组是连续的，也就是说每一行末没有间隔。如果是这样的话，那么把他们当作一个很长的单行来处理。
+有些操作，比如**逐个**处理数组中的元素（比如上面这个），或者是处理不同数组中**坐标相同**的元素（比如数组加法），实际上并不取决于数组的形状或大小。如果是这样的话，那么把他们当作一个很长的单行来处理会比较高效，前提是确保输入/输出数组是**连续的**，也就是说每一行末没有间隔。（简单地说就是多行变一行）
+
+可以使用`isContinuous`方法判断数组是否为“连续的”。
 
 ```cpp
 // 计算矩阵中正值的和，优化版本
@@ -252,7 +260,11 @@ for (int i = 0; i < rows; ++i) {
 }
 ```
 
-上面的这种写法，在`M`是连续存储的矩阵时，外层循环体只会被执行一次，这样的开销会更小，当操作的矩阵比较小的时候尤为明显。
+上面的这种写法很巧妙，当矩阵不连续时，则按传统方式执行；而当`M`是连续存储的矩阵时，外层循环体只会被执行一次，这样的开销会更小，当操作的矩阵比较小的时候尤为明显。
+
+> 在其他地方也是如此，将较长的循环放在内层比放在外层更高效。
+
+### Mat 类的迭代器
 
 最后，`Mat`类所提供的STL风格的迭代器足够聪明，能够跳过相邻两行之间的间隔。
 
@@ -269,29 +281,76 @@ for(; it != it_end; ++it) sum += std::max(*it, 0.);
 
 
 
+### 多通道图像
+
 那么，如果是**多通道的图像**，该如何访问呢？
 
 当然还是可以逐行访问，并通过计算下标，用`[]`运算符取得相应元素的地址；比如3通道的图像，那么某一行第`j`个（从0开始）像素的下标就是`3 * j`，也是第0通道的下标；同理，第1通道、第2通道的下标为`3 * j + 1`、`3 * j + 2`；也就是说，n通道的图像每行有`n * cols`个连续存储的值。
 
-如果觉得这样麻烦，可以用`cv::Vec<T, n>`这个类型来表示一个“像素”，还搭配迭代器使用，如：
+如果觉得这样麻烦，可以用`cv::Vec<T, n>`这个类型来表示一个“像素”；可以定义别名方便使用：
 
-```cpp
+```c++
 typedef cv::Vec<uchar, 3> VecUc3; 
 // 或者: using VecUc3 = cv::Vec<uchar, 3>;
+```
 
-img.at<VecUc3>(x,y)[0] = 64;
-img.at<VecUc3>(x,y)[1] = 128;
+实际上，针对 `Vec<uchar, 3>`，OpenCV已经有一个定义的别名叫做`Vec3b`可以使用。
 
-auto it = img.begin<VecUc3>(), it_end = img.end<VecUc3>();
+有了`Vec3b`这个类型，事情就可以像访问单通道图像那样，比如通过`at`方法，获得到一个“像素”，再使用`[]`运算符获得每个通道的值；当然，也能用在迭代器上：
+
+```cpp
+img.at<Vec3b>(x,y)[0] = 64;
+img.at<Vec3b>(x,y)[1] = 128;
+
+auto it = img.begin<Vec3b>(), it_end = img.end<VecUc3>();
 for(; it != it_end; ++it) {
     VecUc pix = *it;
     std::cout << std::max(pix[0], pix[1], pix[2]) << ' ';
 }
 ```
 
-实际上，针对 `Vec<uchar, 3>`，OpenCV已经有一个定义的别名叫做`Vec3b`可以使用。
+> 补充：既然有了迭代器，那么`std::for_each`之类的方法应该也是可以使用的…
 
-## Mat使用
+###  Mat_ 模板类
+
+我们发现，之前的`at`和`ptr`方法都是模板函数，而为了更方便的使用这些模板函数，OpenCV 还有一个`Mat_`类，其重载的`operator()`使得获取图像上的点变得更方便，如：
+
+```c++
+Mat_<uchar> im = image;
+im(i,j) = 255;
+```
+
+
+
+### 实例：colorReduce、滤波等
+
+https://www.cnblogs.com/ronny/p/3482202.html
+
+https://www.cnblogs.com/zjgtan/archive/2013/04/06/3002962.html
+
+## Mat 的使用
+
+### 算术运算
+
+[Opencv理解Mat与基本操作 - loopvoid.github.io](https://loopvoid.github.io/2017/02/19/Opencv%E7%90%86%E8%A7%A3Mat/)
+
+另，参见上例colorReduce：
+
+```c++
+int n = static_cast<int>(log(static_cast<double>(div))/log(2.0));
+mask = 0xFF << n;
+result = (image & Scalar(mask,mask,mask)) + Scalar(div/2,div/2,div/2);
+```
+
+
+
+
+
+
+
+### 容器
+
+
 
 `Mat`还可以像STL容器一样支持`push_back`。
 
@@ -299,9 +358,32 @@ for(; it != it_end; ++it) {
 
 
 
-## Mat存储图像
+### 读写图像
 
-未完待续……
+简单来说，要把一个图像读入`Mat`中，只需要调用`cv::imread`函数即可：
+
+```c++
+cv::Mat img = cv::imread("./test.jpg");
+```
+
+读取后的图像可以使用`cv::imshow`显示：
+
+```c++
+cv::namedWindow("Test Image", cv::WINDOW_AUTOSIZE);
+cv::imshow("Test Image", img);
+```
+
+
+
+也可以用`cv::imwrite`把`Mat`中存储的图像写入到图像文件中：
+
+```cpp
+cv::imwrite("./output.jpg", img);
+```
+
+
+
+
 
 
 

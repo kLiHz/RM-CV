@@ -114,6 +114,6 @@ yUML不仅可以画类图，其他的活动图、行为图等等也是可以的 
 
 PlantUML稍微复杂些，但有兴趣也可以了解一下。
 
-教程链接：[Drawing a UML Diagram in the VS Code | by Joe T. Santhanavanich | Towards Data Science](https://towardsdatascience.com/drawing-a-uml-diagram-in-the-vs-code-53c2e67deffe)
+教程链接：[Drawing a UML Diagram in the VS Code &#124; by Joe T. Santhanavanich &#124; Towards Data Science](https://towardsdatascience.com/drawing-a-uml-diagram-in-the-vs-code-53c2e67deffe)
 
 教程中提到的PlantUML网站：[Open-source tool that uses simple textual descriptions to draw beautiful UML diagrams. (plantuml.com)](https://plantuml.com/en/)。这个网站也有[中文版](https://plantuml.com/zh/)，也可以点击页面上的语言按钮切换。

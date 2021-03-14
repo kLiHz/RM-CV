@@ -214,5 +214,5 @@ $ cd ..
 
 - [《Advanced Bash-Scripting Guide (高级Bash脚本编程指南)》中文版](https://doc.yonyoucloud.com/doc/Advanced-Bash-Scripting-Guide-in-Chinese/index.html)：链接中有原文地址，也有项目的Github地址
 
-
+- https://www.landiannews.com/archives/tag/VMWare
 
