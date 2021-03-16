@@ -4,6 +4,7 @@
 
 ## C++
 
+- [C语言宏定义](./C++/c-define-a-macro.md)
 - [C/C++ 多文件编程](./C++/multi-files-programming.md)
 - [C++ Lambda表达式](./C++/lambda-expression.md)
 
