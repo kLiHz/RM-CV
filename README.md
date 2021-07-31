@@ -1,5 +1,7 @@
 # RM-CV
 
+> ⚠ 该仓库已弃用，请移步 [程序员入门指南](https://github.com/tsagaanbar/Newly-Programmer-ABC)（在线阅读地址：[GitHub Pages](https://tsagaanbar.github.io/Newly-Programmer-ABC)）。
+
 ## 简介
 
 本repo计划存放 Robomaster 比赛中 计算机视觉/算法 相关的资料，同时也计划形成一个计算机学科的入门知识体系。
