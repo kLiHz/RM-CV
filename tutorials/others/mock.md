@@ -1,0 +1,1 @@
+[What Is Google C++ Mocking Framework? (googlesource.com)](https://chromium.googlesource.com/external/github.com/google/googletest/+/release-1.8.0/googlemock/docs/ForDummies.md)

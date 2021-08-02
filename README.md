@@ -1,14 +1,10 @@
 # RM-CV
 
-> ⚠ 该仓库已弃用，请移步 [程序员入门指南](https://github.com/tsagaanbar/Newly-Programmer-ABC)（在线阅读地址：[GitHub Pages](https://tsagaanbar.github.io/Newly-Programmer-ABC)）。
+> :warning: 该仓库计划存放和 Robomaster 机甲大师对抗赛视觉/算法部分有关的内容。请有需要的读者移步 [程序员入门指南](https://github.com/tsagaanbar/Newly-Programmer-ABC)（在线阅读地址：[GitHub Pages](https://tsagaanbar.github.io/Newly-Programmer-ABC)）有关计算机入门基础的内容。
 
 ## 简介
 
-本repo计划存放 Robomaster 比赛中 计算机视觉/算法 相关的资料，同时也计划形成一个计算机学科的入门知识体系。
-
-[基础能力.md](./基础能力.md)、[视觉组入门指南.md](./视觉组入门指南.md)两个文档大致介绍了需要掌握的基础能力和知识范围。
-
-[tutorials](./tutorials)目录存放各类教程。
+该仓库计划存放和 Robomaster 机甲大师对抗赛视觉/算法部分有关的内容。
 
 ## 推荐
 
@@ -22,13 +18,11 @@
 
 - 一个讲OpenCV的知乎专栏：[OpenCV - 知乎专栏 (zhihu.com)](https://www.zhihu.com/column/lowkeyway-OpenCV)
 
-- 未完待续
+- ……
 
 **Telegram 频道**：
 
 - 浅見沙織的笔记：https://t.me/NoteOfAsamiSaori
-
-
 
 ## 杂项
 
